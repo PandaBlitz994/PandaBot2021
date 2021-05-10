@@ -3,6 +3,8 @@ from util import buttons
 from pybricks.parameters import Button
 import time
 
+target = 50
+
 def light_reset():
     buttons.wait_for_press(Button.CENTER)
     Black = Robot.color_left.reflection()
