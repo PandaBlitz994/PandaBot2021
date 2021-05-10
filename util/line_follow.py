@@ -13,7 +13,7 @@ def light_reset():
     target = White * Black /2
     return target
 
-def line_follow(time, vel, kp, sensor, target):
+def line_follow(time, vel, kp, sensor):
     start_time = time.time()
     while start_time - time.time() < time:
         error = sensor.reflection() - target
