@@ -6,7 +6,7 @@ from runs import run2
 
 button_codes = [Button.UP, Button.RIGHT, Button.DOWN, Button.LEFT, Button.CENTER]
 button_symbols = [" ^ ", " > ", " v ", " < ", "[] "]
-runs = [run1]
+runs = [run2]
 
 def display_menu():
   Robot.brick.screen.clear()
@@ -24,4 +24,3 @@ while True:
   Robot.brick.screen.clear()
 
   runs[btn_index].start()
-  run2.start()

@@ -10,9 +10,9 @@ class Robot():
   brick = EV3Brick()
 
   wheel_left = Motor(Port.C)
-  wheel_right = Motor(Port.B)
+  wheel_right = Motor(Port.A)
 
-  arm_left = Motor(Port.A)
+  arm_left = Motor(Port.B)
   arm_right = Motor(Port.D)
 
   gyro = GyroSensor(Port.S2, Direction.COUNTERCLOCKWISE)
