@@ -3,13 +3,34 @@ from util import buttons
 from pybricks.parameters import Button
 import time
 
+target = 50
+
 def light_reset():
     buttons.wait_for_press(Button.CENTER)
     Black = Robot.color_left.reflection()
     buttons.wait_for_press(Button.CENTER)
     White = Robot.color_left.reflection()
-    avg = White * Black /2
-    return avg
+    target = White * Black /2
+    return target
+
+def line_follow(time, vel, kp, sensor):
+    start_time = time.time()
+    while start_time - time.time() < time:
+        error = sensor.reflection() - target
+        Robot.chassis.drive(vel, error*kp)
+    Robot.chassis.stop()
+
+
+
+
+
+
+
+
+"""
+WHITE = 100
+BLACK = 0
+target = (WHITE + BLACK) / 2
     
 
 
@@ -38,4 +59,4 @@ def right():
     '''
     בייסיקלי אותו הדבר
     '''
-
+"""
