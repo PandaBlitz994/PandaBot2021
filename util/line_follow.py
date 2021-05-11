@@ -13,9 +13,9 @@ def light_reset():
     target = White * Black /2
     return target
 
-def line_follow(time, vel, kp, sensor):
+def line_follow(sec, vel, kp, sensor):
     start_time = time.time()
-    while start_time - time.time() < time:
+    while start_time - time.time() < sec:
         error = sensor.reflection() - target
         Robot.chassis.drive(vel, error*kp)
     Robot.chassis.stop()

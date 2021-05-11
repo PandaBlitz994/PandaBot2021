@@ -1,18 +1,15 @@
 from robot import Robot
 from util.gyro import *
-import time
 
 
-name = "gyro test"
+name = "Run 2"
 def start():
     Robot.gyro.reset_angle(0)
-    gyro_turn(90, 0.6)
+    gyro_turn(90, 0.7)
     print(Robot.gyro.angle())
     gyro_follow(9, 200, 1, 90)
     print(Robot.gyro.angle())
-    Robot.wheel_left.run(500)
-    time.sleep(3)
-    Robot.wheel_left.stop()
+    Robot.wheel_left.run_time(500, 4)
     gyro_follow(1, -100, 1, 90)
     gyro_follow(10, -200, 1, 90)
         
