@@ -1,5 +1,6 @@
-from util import line_follow
+from util.gyro import *
+from robot import Robot
 
-
+name = "run1"
 def start():
-    line_follow(10, 200, 0.2, color_right)
+    gyro_turn(0, -20)
