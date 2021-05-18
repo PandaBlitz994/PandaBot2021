@@ -4,7 +4,7 @@ import time
 
 def gyro_turn(degrees, kp):
     startPos = Robot.gyro.angle()
-    while abs(Robot.gyro.angle() - degrees) > 1:
+    while abs(Robot.gyro.angle() - degrees) > 2:
         error = Robot.gyro.angle() - (degrees + startPos)
         turn_rate = error*kp
 

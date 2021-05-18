@@ -3,7 +3,8 @@ from util import buttons
 from pybricks.parameters import Button
 import time
 
-target = 18
+BLACK = 4
+target = 17
 
 def light_reset():
     buttons.wait_for_press(Button.CENTER)
@@ -20,13 +21,20 @@ def line_follow(sec, vel, kp, sensor, side):
     start_time = time.time()
     while time.time() - start_time < sec:
         error = sensor.reflection() - target
-        print(sensor.reflection())
-        print(error)
         if side == 'L':
-            Robot.chassis.drive(vel, error*kp)
-        elif side == 'R':
             Robot.chassis.drive(vel, -error*kp)
+        elif side == 'R':
+            Robot.chassis.drive(vel, error*kp)
+
+
     Robot.chassis.stop()
+
+def drive_until_black(vel, sensor):
+    color = 100
+    while color > 3:
+        color = sensor.reflection()
+        Robot.chassis.drive(vel, 0)
+    Robot.brake()
 
 
 
