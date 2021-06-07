@@ -4,7 +4,7 @@ from pybricks.parameters import Button
 import time
 
 BLACK = 4
-target = 17
+target = 17.5
 
 def light_reset():
     buttons.wait_for_press(Button.CENTER)
