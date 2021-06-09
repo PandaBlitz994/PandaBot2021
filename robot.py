@@ -15,9 +15,9 @@ class Robot():
   arm_left = Motor(Port.B)
   arm_right = Motor(Port.D)
 
-  gyro = GyroSensor(Port.S2, Direction.COUNTERCLOCKWISE)
+  gyro = GyroSensor(Port.S4, Direction.COUNTERCLOCKWISE)
   color_left = ColorSensor(Port.S1)
-  color_right = ColorSensor(Port.S4)
+  color_right = ColorSensor(Port.S3)
 
   chassis = DriveBase(wheel_left, wheel_right, wheel_diameter=62.4, axle_track=119)
 

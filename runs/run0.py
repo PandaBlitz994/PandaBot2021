@@ -1,6 +1,6 @@
-from util import line_follow 
-
+from robot import Robot
 name = "light_reset"
 
 def start():
-    line_follow.target = line_follow.light_reset() 
+    while True:
+        print(Robot.gyro.angle())

@@ -22,9 +22,9 @@ def line_follow(sec, vel, kp, sensor, side):
     while time.time() - start_time < sec:
         error = sensor.reflection() - target
         if side == 'L':
-            Robot.chassis.drive(vel, -error*kp)
-        elif side == 'R':
             Robot.chassis.drive(vel, error*kp)
+        elif side == 'R':
+            Robot.chassis.drive(vel, -error*kp)
 
 
     Robot.chassis.stop()

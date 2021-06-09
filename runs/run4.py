@@ -7,8 +7,10 @@ name = "Run 3"
 def start():
     Robot.gyro.reset_angle(0)
     gyro_follow(5.5, 200, 6, 0)
-    Robot.arm_right.run_angle(500, 120)
+    Robot.arm_right.run_angle(500, 130)
     time.sleep(0.5)
+    gyro_follow(0.2, -200, 6, 0)
+    gyro_follow(0.2, 200, 6, 0)
     gyro_follow(6, -200, 6, 0)
-
+    Robot.brake()
 
